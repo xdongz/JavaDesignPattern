@@ -1,0 +1,7 @@
+* 适配器模式:
+适配器模式就是将已有的接口转换成另一种想要的接口。
+
+在本例中，假设Processor是自己写的类，Apply类中有两个方法来处理Processor中的信息。
+而Filter类是别人写的，惊讶地发现Waveform中的处理过程和处理Processor差不多，在不能改变Filter源代码的情况下，如果让Apply中的方法也能接收Filter的实例呢？
+
+那么就需要使用适配器模式，定义一个fileterAdapter类去实现Processor接口，在filterAdapter中聚合了别人写的Filter类，相当于在Filter外面包了一层，使得Apply能接收filterAdapter，但是实际上却运行的是Filter的方法。
